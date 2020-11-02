@@ -6,7 +6,7 @@ The configuration of the EC2 instances is left to be done manually. The deployme
 
 The practical exercises of reading and writing to zk work on the command line and with the python zk client.
 
-
+After completing this tutorial you'll have practical experience of writing with the zk data model and the kazoo API. You'll also be familiar how to use fabric to automate configuration of VMs 
 
 # Configure AWS EC2
 
