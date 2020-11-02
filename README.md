@@ -1,5 +1,12 @@
 # Zookeeper Demo
 
+A simple tutorial to run a replicated zookeeper service in EC2.
+
+The configuration of the EC2 instances is left to be done manually. The deployment of zookeeper is automated with fabric.
+
+The practical exercises of reading and writing to zk work on the command line and with the python zk client.
+
+
 
 # Configure AWS EC2
 
