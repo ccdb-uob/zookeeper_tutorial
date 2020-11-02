@@ -1,0 +1,7 @@
+# list your hosts here
+hosts:
+  public_ip_1: private_ip_1
+  public_ip_2: private_ip_2
+
+
+ssh_path: <path to your ssh key>

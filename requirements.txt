@@ -1,0 +1,4 @@
+fabric2
+jinja2
+pyyaml
+kazoo
