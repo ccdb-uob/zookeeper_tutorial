@@ -6,7 +6,7 @@ jinja_environment = jinja2.Environment(loader=jinja2.FileSystemLoader('etc'))
 template = jinja_environment.get_template('zoo.cfg.template')
 
 with open('config.yaml') as f:
-    config = yaml.load(f)
+    config = yaml.load(f, Loader=yaml.SafeLoader)
 
 hosts = [(k, v) for k, v in config['hosts'].items()]
 
