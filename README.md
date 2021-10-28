@@ -30,9 +30,36 @@ Also add a TCP rule 0-65535 for 172.31.0.0/16
 - [ ] edit `config.yaml` and insert public and private IP addresses of your EC2 instances 
 - [ ] configure path to your AWS ssh key (chosen when starting EC2 instances)
 
-run `start_zk_cluster.py`
+## Use boto_tutorial
 
-run `query_zk_cluster.py` to check that everything worked. 
+A quick way to start the VMs is via the [boto_tutorial](https://github.com/ccdb-uob/boto_tutorial)
+To prepare machines for the zookeeper tutorial first create a security group as described above. Note the id of the 
+security group. For illustration, I have used `sg-0f8c026df0032d5c1` - you need to change that in your own code. You 
+can use any name you like.  
+```bash
+fab create --name zk --securitygroup sg-0f8c026df0032d5c1 
+fab create --name zk --securitygroup sg-0f8c026df0032d5c1 
+fab create --name zk --securitygroup sg-0f8c026df0032d5c1 
+```
+
+then run 
+`fab instancedetails --name zk`
+
+And copy the ip address pairs at the end of the output (use rectangle selection to make that easier for you)
+```bash
+INFO:fabfile:Instance up and running at ec2-52-55-249-15.compute-1.amazonaws.com with internal ip 172.31.45.4: 52.55.249.15: 172.31.45.4
+INFO:fabfile:Instance up and running at ec2-18-232-78-191.compute-1.amazonaws.com with internal ip 172.31.39.236: 18.232.78.191: 172.31.39.236
+INFO:fabfile:Instance up and running at ec2-54-224-224-79.compute-1.amazonaws.com with internal ip 172.31.32.31: 54.224.224.79: 172.31.32.31
+```
+into the `config.yaml` file
+```yaml
+  52.55.249.15: 172.31.45.4
+  18.232.78.191: 172.31.39.236
+  54.224.224.79: 172.31.32.31
+```
+
+- [] run `start_zk_cluster.py` to deploy ZK on the machines
+- []  run `query_zk_cluster.py` to check that everything worked. 
 
 You should see something like the below.
 ![](docs/images/cluster_state.png)

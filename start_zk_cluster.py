@@ -11,7 +11,7 @@ template = jinja_environment.get_template('zoo.cfg.template')
 # use loggers right from the start, rather than 'print'
 logger = logging.getLogger(__name__)
 # this will log boto output to std out
-logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
+logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 
 
 with open('config.yaml') as f:
