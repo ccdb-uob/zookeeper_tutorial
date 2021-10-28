@@ -15,7 +15,7 @@ logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 
 
 with open('config.yaml') as f:
-    config = yaml.load(f)
+    config = yaml.load(f, Loader=yaml.SafeLoader)
 
 hosts = [(k, v) for k, v in config['hosts'].items()]
 
