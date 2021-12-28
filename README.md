@@ -81,11 +81,13 @@ ssh into two of your hosts (host A and B) and run
 
 ### Ephemeral nodes
 
-One node A enter `create -e /app 'COMSM0072'` to create an ephemeral node
-One node B enter `get -w /app` to watch the node
+On node A enter `create -e /app 'COMSM0072'` to create an ephemeral node.
+
+On node B enter `get -w /app` to watch the node
 ![](docs/images/eph_node.png)
 
-Now close the session on host A
+Now close the session on host A.
+
 You should see a message in the session on host B
 `WatchedEvent state:SyncConnected type:NodeDeleted path:/app` 
 ![](docs/images/node_deteled.png)
